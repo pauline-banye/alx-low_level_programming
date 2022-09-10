@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Succes)
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Succes)
+ */
 
 int main(void)
 {
-        int n;
-	
+	int n;
+
 	for (n = 0 ; n < 16 ; n++)
 	{
 		if (n < 10)
@@ -23,4 +23,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-}				
+}
