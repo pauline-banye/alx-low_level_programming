@@ -8,7 +8,7 @@
  * Return: a pointer to a 2 dimensional array of integers
  */
 
-int **grid(int width, int height)
+int **alloc_grid(int width, int height)
 {
 
 	int w, h, **grid;
@@ -17,8 +17,8 @@ int **grid(int width, int height)
 	{
 		return ('\0');
 	}
-	grid = malloc(sizeof(int *) * height);
 
+	grid = malloc(sizeof(int *) * height);
 	if (grid == NULL)
 	{
 		return (NULL);
@@ -27,7 +27,6 @@ int **grid(int width, int height)
 	for (w = 0 ; w < height ; w++)
 	{
 		grid[w] = malloc(sizeof(int) * width);
-
 		if (grid[w] == NULL)
 		{
 			for (w = w - 1; w >= 0 ; w--)
@@ -42,5 +41,6 @@ int **grid(int width, int height)
 			grid[w][h] = 0;
 		}
 	}
+
 	return (grid);
 }
