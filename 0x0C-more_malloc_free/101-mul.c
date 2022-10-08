@@ -1,39 +1,30 @@
+#include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * main - Multiplies two positive numbers.
- * @argv: The number of arguments passed to the program.
- * @argc: An array of pointers to the arguments.
- * Return: Always 0.
+ * main - Check the code
+ * @argc: number of arguments
+ * @argv: arguments
+ * Return: Nothing
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-
-	unsigned long mul;
-
-	int a, b;
+	int num1, num2, result;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	for (a = 1; a < argc; a++)
+	else
 	{
-		for (b = 0; argv[a][b] != '\0'; b++)
-		{
-			if (argv[a][b] > 57 || argv[a][b] < 48)
-			{
-				printf("Error\n");
-				exit(98);
-			}
-		}
-	}
-	mul = atol(argv[1]) * atol(argv[2]);
-	printf("%lu\n", mul);
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
+		result = num1 * num2;
+		printf("%d\n", result);
 
-return (0);
+		return (0);
+	}
 }
