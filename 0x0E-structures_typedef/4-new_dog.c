@@ -9,10 +9,10 @@
  * Return: pointer to a new dog of type my_dog
  **/
 
-my_dog *new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	int i, lenX, lenY;
-	struct my_dog *puppy = NULL;
+	struct dog_t *puppy = NULL;
 
 	lenX = 0;
 	while (name[lenX != '\0'])
