@@ -11,41 +11,43 @@
 
 my_dog *new_dog(char *name, float age, char *owner)
 {
-	int nameLen, ownerLen, i;
-	my_dog *puppy;
+	int i, lenX, lenY;
+	struct my_dog *puppy = NULL;
 
-	puppy = (my_dog *)malloc(sizeof(my_dog));
+	lenX = 0;
+	while (name[lenX != '\0'])
+		lenX++;
+	lenY = 0;
+	while owner[lenY != '\0'])
+		lenY++;
+	puppy = malloc(sizeof(struct dog));
 
 	if (puppy == NULL)
-		return (NULL);
-	nameLen = ownerLen = 0;
-
-	while (name[nameLen++])
-		;
-
-	while (owner[ownerLen++])
-		;
-
-	puppy->name = malloc(nameLen * sizeof(puppy->name));
-	if (puppy->name == NULL)
 	{
 		free(puppy);
 		return (NULL);
 	}
 
-	for (i = 0; i <= nameLen; i++)
-		puppy->name[i] = name[i];
-	puppy->age = age;
-	puppy->owner = malloc(ownerLen * sizeof(puppy->owner));
-
-	if (puppy->owner == NULL)
+	puppy->name = malloc(lenX + 1);
+	if (puppy->name == NULL)
 	{
 		free(puppy->name);
 		free(puppy);
 		return (NULL);
 	}
 
-	for (i = 0; i <= ownerLen; i++)
+	puppy->owner = malloc(lenY + 1);
+	if (puppy->owner == NULL)
+	{
+		free(puppy->name);
+		free(puppy->owner);
+		free(puppy);
+		return (NULL);
+	}
+	for (i = 0; i <= lenX; i++)
+		puppy->name[i] = name[i];
+	for (i = 0; i <= lenY; i++)
 		puppy->owner[i] = owner[i];
+	puppy->age = age;
 	return (puppy);
 }
